@@ -1,0 +1,65 @@
+<div class="main">
+    <app-header></app-header>
+    <div class="form-content">
+        <form class="form" action="#" [formGroup]="addressBookForm" (ngSubmit)="onSubmit()">
+            <div class="form-head">
+                <div class="form-head-text">Person Address Form</div>
+                <a href="../pages/home.html"><img class="cancel-img" src="../assets/images/cancel.jpeg" alt="cancel"></a>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="name">Name</label>
+                <input class="input " (input)="nameValidation()" type="text" id="name" name="name" [(ngModel)]="addressBookData.name" [ngModelOptions]="{standalone: true}" required>
+                <span class="text-error">{{ this.errorText }}</span>
+            </div>
+            
+            <div class="row-content ">
+                <label class="label text " for="address ">Address</label>
+                <input class="input" (input)="addressValidation()" id="address" name="address" type="text" [(ngModel)]="addressBookData.address" [ngModelOptions]="{standalone: true}" required>
+                <span class="text-error">{{ this.errorText }}</span>
+            </div>
+        
+            <div class="select-box ">
+                <div>
+                    <label for="city " class="label text ">City</label>
+                    <select class="select " name="city " id="city " [(ngModel)]="addressBookData.city " [ngModelOptions]="{standalone: true} " >
+                        <option selected disabled>Select City</option>
+                        <option value="Nanded">Mumbai</option>
+                        <option value="Pune ">Pune</option>
+                        <option value="Bangalore ">Bangalore</option>
+                        <option value="Jaipur">Jaipur</option>
+                        <option value="Patna">Patna</option>
+                    </select>
+                </div>
+                <div class="zip ">
+                    <label for="zipCode " class="label text">Zip Code</label>
+                    <input class="select " type="number " name="zipCode " id="zipCode" [(ngModel)]="addressBookData.zipCode" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div>
+                    <label for="state " class="label text ">State</label>
+                    <select class="select " name="state " id="state " [(ngModel)]="addressBookData.state " [ngModelOptions]="{standalone: true} "  required >
+                        <option selected disabled>Select State</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="UttarPradesh">Uttar Pradesh</option>
+                    </select>
+                </div>
+            </div>
+              
+           
+            <div class="row-content ">
+                <label class="label text " for="phoneNumber ">Phone Number</label>
+                <input class="input" (input)="phoneNumberValidation()" id="phoneNumber " name="phoneNumber " type="text" [(ngModel)]="addressBookData.phoneNumber" [ngModelOptions]="{standalone: true}" required>
+                <span class="text-error">{{ this.errorText }}</span>
+            </div>
+          
+
+            <div class="buttonParent ">
+                <div class="submit-reset ">
+                    <button class="submitButton button " type="submit " id="submit">{{ isUpdate ?'Update':'Add'}}</button>
+                    <button class="resetButton button "  type="reset" id="reset ">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -7,9 +7,19 @@
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
+    "src/environments/environment.ts",
+    "src/app/app.module.ts",
+    "src/app/app.component.ts",
+    "src/app/app-routing.module.ts",
+    "src/app/components/form/form.component.ts",
+    "src/app/components/home/home.component.ts",
+    "src/app/components/header/header.component.ts",
+    "src/app/services/addressBook.service.ts",
+    "src/app/models/addressBookData.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "../node_modules/@wtw/**/*"
   ]
 }
